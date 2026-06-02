@@ -1,6 +1,6 @@
 # AgentKit
 
-> 智能对话和运维助手，支持 RAG 知识库问答和 AIOps 智能诊断
+> 基于 LangChain 的智能 Agent 系统，支持 RAG 知识库问答和故障诊断
 
 [![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.109+-green.svg)](https://fastapi.tiangolo.com/)
@@ -31,29 +31,23 @@
 
 ```bash
 # 1. 克隆项目
-git clone <repository_url>
+git clone https://github.com/pretextQ/AgentKit.git
 cd AgentKit
 
-# 2. 安装依赖（推荐使用 uv）
+# 2. 安装依赖
 pip install uv
 uv venv
 uv sync
 
-# 3. 编辑配置文件，填入你的 DASHSCOPE_API_KEY
-# Linux/macOS
-vim .env
-# Windows
-notepad .env
+# 3. 配置环境变量
+cp .env.example .env
+# 编辑 .env，填入你的 DASHSCOPE_API_KEY
 
-# 4. 一键启动所有服务
+# 4. 启动服务
 uv run python start.py
 ```
 
 启动后访问：
-- **Web 界面**: http://localhost:9900
-- **API 文档**: http://localhost:9900/docs
-
-### 访问服务
 - **Web 界面**: http://localhost:9900
 - **API 文档**: http://localhost:9900/docs
 
