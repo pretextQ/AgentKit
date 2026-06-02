@@ -29,7 +29,7 @@
 
 ### 安装和启动
 
-```bash
+```powershell
 # 1. 克隆项目
 git clone https://github.com/pretextQ/AgentKit.git
 cd AgentKit
@@ -40,7 +40,7 @@ uv venv
 uv sync
 
 # 3. 配置环境变量
-cp .env.example .env
+copy .env.example .env
 # 编辑 .env，填入你的 DASHSCOPE_API_KEY
 
 # 4. 启动服务
@@ -229,36 +229,25 @@ make test              # 运行测试
 ## 🐛 常见问题
 
 ### API Key 错误
-```bash
-# 检查环境变量
-cat .env | grep DASHSCOPE_API_KEY    # Linux/macOS
-type .env | findstr DASHSCOPE_API_KEY  # Windows
+```powershell
+type .env | findstr DASHSCOPE_API_KEY
 ```
 
 ### 端口被占用
-```bash
-# Linux/macOS
-lsof -i :9900
-lsof -i :8003
-lsof -i :8004
-
-# Windows
+```powershell
+# 查看占用端口的进程
 netstat -ano | findstr :9900
 netstat -ano | findstr :8003
 netstat -ano | findstr :8004
 
 # 结束占用进程（替换 PID 为实际进程 ID）
-# Linux/macOS
-kill -9 <PID>
-# Windows
 taskkill /F /PID <PID>
 ```
 
 ### 查看日志
-```bash
+```powershell
 # FastAPI 主服务日志（Loguru 按天轮转）
-tail -f logs/app_$(date +%Y-%m-%d).log    # Linux/macOS
-type logs\app_YYYY-MM-DD.log              # Windows
+type logs\app_YYYY-MM-DD.log
 ```
 
 
