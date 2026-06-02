@@ -38,6 +38,12 @@ poetry.lock
 
 # Claude Code
 .claude/
+CLAUDE.md
+CODE_REVIEW.md
+
+# 简历相关
+00.txt
+01.md
 *.swp
 *.swo
 *~
